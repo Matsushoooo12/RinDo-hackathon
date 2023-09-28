@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "easymde/dist/easymde.min.css";
+@import "zenn-content-css";
+@import "~react-big-calendar/lib/css/react-big-calendar.css";
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,4 +28,179 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* markdown */
+
+div.editor-toolbar {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border: none;
+  background-color: #b2f5ea;
+}
+
+div.CodeMirror.cm-s-easymde.CodeMirror-wrap {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top-width: 0.3px;
+  border-top-color: #e2e8f0;
+  height: calc(100vh - 145px);
+  overflow-y: auto;
+  padding: 16px;
+  padding-top: 0;
+  flex=: 1;
+  background-color: #e6fffa;
+}
+
+div.CodeMirror-scroll {
+  padding-bottom: 0;
+}
+
+div.editor-statusbar {
+  display: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+.znc ::selection {
+  background: #fed7d7; /* 背景色を変更 */
+  color: black; /* 文字色を変更 */
+}
+
+.cm-formatting.cm-formatting-header.cm-formatting-header-1.cm-header.cm-header-1 {
+  font-size: 27.2px;
+}
+
+span.cm-header.cm-header-1 {
+  font-size: 27.2px;
+}
+
+.cm-formatting.cm-formatting-header.cm-formatting-header-2.cm-header.cm-header-2 {
+  font-size: 24px;
+}
+
+span.cm-header.cm-header-2 {
+  font-size: 24px;
+}
+
+.cm-formatting.cm-formatting-header.cm-formatting-header-3.cm-header.cm-header-3 {
+  font-size: 20.8px;
+}
+
+span.cm-header.cm-header-3 {
+  font-size: 20.8px;
+}
+
+.cm-formatting.cm-formatting-header.cm-formatting-header-4.cm-header.cm-header-4 {
+  font-size: 17.6px;
+  font-weight: normal;
+}
+
+span.cm-header.cm-header-4 {
+  font-size: 17.6px;
+  font-weight: normal;
+}
+
+.cm-formatting.cm-formatting-header.cm-formatting-header-5.cm-header.cm-header-5 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+span.cm-header.cm-header-5 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.cm-formatting.cm-formatting-header.cm-formatting-header-6.cm-header.cm-header-6 {
+  font-size: 14.4px;
+  font-weight: normal;
+}
+
+span.cm-header.cm-header-6 {
+  font-size: 14.4px;
+  font-weight: normal;
+}
+
+/* calendar */
+
+.rbc-toolbar button {
+  border-color: #e2e8f0 !important;
+  border-width: 0.3px !important;
+  font-size: 14px;
+  padding: 4px 12px !important;
+  font-size: 14px !important;
+}
+
+.rbc-btn-group button:first-child {
+  border-bottom-left-radius: 1000px;
+  border-top-left-radius: 1000px;
+}
+
+.rbc-btn-group button:last-child {
+  border-bottom-right-radius: 1000px;
+  border-top-right-radius: 1000px;
+}
+
+button.rbc-active {
+  background-color: #81e6d9 !important;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #b2f5ea !important;
+}
+
+span.rbc-toolbar-label {
+  font-weight: bold;
+}
+
+.rbc-month-view {
+  border-width: 0.3px !important;
+  border-color: #e2e8f0 !important;
+}
+
+.rbc-button-link {
+  font-size: 14px;
+}
+
+.rbc-day-bg.rbc-off-range-bg {
+  background-color: #edf2f7;
+}
+
+.rbc-day-bg.rbc-today {
+  background-color: #81e6d9;
+}
+
+.rbc-label {
+  font-size: 14px;
+}
+
+.rbc-label.rbc-time-header-gutter {
+  padding: 0px;
+  min-width: 71.52px !important;
+}
+
+.rbc-toolbar button:active,
+.rbc-toolbar button.rbc-active {
+  box-shadow: none !important;
+}
+
+/* timer */
+
+@keyframes rotateCircle {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -251.3274; /* 2 * Math.PI * 40 */
+  }
+}
+
+.red-text {
+  color: red;
 }
